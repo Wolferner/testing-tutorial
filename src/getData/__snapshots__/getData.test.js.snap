@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getData > should return a string of user ids 1`] = `
+[
+  "1",
+  "1",
+  "1",
+  "1",
+  "1",
+]
+`;
