@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > render components 1`] = `
+<input
+  placeholder="Type something here"
+  type="text"
+/>
+`;
+
+exports[`App component > waiting async text 1`] = `
+<div
+  style="color: red;"
+>
+  Zig
+</div>
+`;
