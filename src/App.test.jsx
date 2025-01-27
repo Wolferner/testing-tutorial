@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { expect } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { expect, test } from 'vitest';
 import App from './App';
 
 describe('App component', () => {
@@ -37,5 +38,23 @@ describe('App component', () => {
 		expect(screen.queryByTestId('toggle-div')).toBeNull();
 		fireEvent.click(btn);
 		expect(screen.queryByTestId('toggle-div')).toBeInTheDocument();
+	});
+
+	test('input value test', async () => {
+		render(<App />);
+		const input = screen.getByTestId('input');
+
+		expect(input).toHaveValue('');
+		fireEvent.input(input, { target: { value: 'Hello' } });
+		expect(screen.getByTestId('input')).toHaveValue('Hello');
+	});
+
+	test('input value test with userEvent', async () => {
+		render(<App />);
+		const input = screen.getByTestId('input');
+
+		expect(screen.getByTestId('input')).toHaveValue('');
+		await userEvent.type(input, 'Hello');
+		expect(screen.getByTestId('input')).toHaveValue('Hello');
 	});
 });

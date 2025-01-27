@@ -2,15 +2,9 @@
 
 exports[`App component > render components 1`] = `
 <input
+  data-testid="input"
   placeholder="Type something here"
   type="text"
+  value=""
 />
-`;
-
-exports[`App component > waiting async text 1`] = `
-<div
-  style="color: red;"
->
-  Zig
-</div>
 `;
